@@ -65,14 +65,13 @@ class Set {
         return onDeskCards.count
     }
     
-    func addThreeCardsToDesk() -> Bool {
-        if onDeskCards.count >= 24 || deck.cards.count == 0 {return false}
+    func addThreeCardsToDesk(){
+        if onDeskCards.count >= 24 || deck.cards.count == 0 {return}
         for _ in 0..<3 {
             if let card = deck.getCardFromDeck() {
                 onDeskCards.append(card)
-            } else {return false}
+            } else {return}
         }
-        return true
     }
     
     func playNewGame() {
@@ -91,4 +90,5 @@ class Set {
         }
     }
     //TODO: hint method
+    //TODO: timer
 }
